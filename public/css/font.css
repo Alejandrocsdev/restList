@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Fira Code';
+  font-weight: 400;
+  src: url('../../static/fonts/FiraCode-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-weight: 700;
+  src: url('../../static/fonts/FiraCode-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: url('../../static/fonts/roboto-regular-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 700;
+  src: url('../../static/fonts/roboto-bold-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-weight: 400;
+  src: url('../../static/fonts/RobotoMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-weight: 700;
+  src: url('../../static/fonts/RobotoMono-Bold.woff2') format('woff2');
+}

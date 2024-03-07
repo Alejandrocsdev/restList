@@ -1,1 +1,26 @@
-<h1>Example App: Home</h1>
+<div class="search-bar">
+  <label for="search">Search</label>
+  <input type="text" id="search">
+  <button>
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+</div>
+<div class="restaurants-container">
+  {{#each restaurants}}
+  <a href="">
+    <div class="restaurant">
+      <div class="restaurant-img">
+        <img src="{{this.image}}">
+      </div>
+      <div class="restaurant-data">
+        <p class="restaurant-name">{{this.name}}</p>
+        <p class="restaurant-category">{{this.category}}</p>
+        <p class="restaurant-rating">
+          <i class="fa-solid fa-star"></i>
+          {{this.rating}}
+        </p>
+      </div>
+    </div>
+  </a>
+  {{/each}}
+</div>

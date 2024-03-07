@@ -10,4 +10,8 @@
 
 03 add static files & json for model ([c692af4](https://github.com/Alejandrocsdev/restList/commit/c692af4261b8441b5527c13e330b989ebb039227))
 
-04 use express-handlebars as view engine ([](https://github.com/Alejandrocsdev/restList/commit/))
+04 use express-handlebars as view engine ([e1beac6](https://github.com/Alejandrocsdev/restList/commit/e1beac69401aa14f6fdf6b0a639a71e2eb2bbbb0))
+
+### Features
+
+05 add listing page ([](https://github.com/Alejandrocsdev/restList/commit/))
