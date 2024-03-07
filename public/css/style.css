@@ -1,10 +1,11 @@
+/* main.hbs */
 :root {
   --header-height: 70px;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Fira Code', 'Roboto', 'Roboto Mono';
+  font-family: 'Fira Code', 'Roboto', 'Roboto Mono', 'Noto Sans TC';
 }
 
 body {
@@ -48,6 +49,8 @@ main {
   border-radius: 16px;
   border: 2px solid #353535;
 }
+
+/* index.hbs */
 
 .search-bar {
   height: 50px;
@@ -121,4 +124,23 @@ main {
 
 .restaurant-data>p {
   margin: 0;
+}
+
+/* detail.hbs */
+
+.map-link {
+  color: #9b2226;
+}
+
+.detail-img {
+  text-align: center;
+}
+
+.detail-img>img {
+  height: 300px;
+}
+
+td:first-child {
+  text-align: center;
+  text-wrap: nowrap;
 }

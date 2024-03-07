@@ -14,4 +14,6 @@
 
 ### Features
 
-05 add listing page ([](https://github.com/Alejandrocsdev/restList/commit/))
+05 add listing page ([a62c645](https://github.com/Alejandrocsdev/restList/commit/a62c64547d08bca3ef79ede4af80bbde2c946d5d))
+
+06 add detail page ([](https://github.com/Alejandrocsdev/restList/commit/))

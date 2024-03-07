@@ -1,0 +1,39 @@
+<div class="detail-img">
+  <img src="{{restaurant.image}}">
+</div>
+<table class="detail-data">
+  <tr>
+    <td>中文名稱</td>
+    <td>:</td>
+    <td>{{restaurant.name}}</td>
+  </tr>
+  <tr>
+    <td>英文名稱</td>
+    <td>:</td>
+    <td>{{restaurant.name_en}}</td>
+  </tr>
+  <tr>
+    <td>類別</td>
+    <td>:</td>
+    <td>{{restaurant.category}}</td>
+  </tr>
+  <tr>
+    <td>地址</td>
+    <td>:</td>
+    <td>{{restaurant.location}}
+      <a class="map-link" href="{{restaurant.google_map}}" target="_blank">
+        <i class="fa-solid fa-map-location-dot"></i>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>電話</td>
+    <td>:</td>
+    <td>{{restaurant.phone}}</td>
+  </tr>
+  <tr>
+    <td>介紹</td>
+    <td>:</td>
+    <td>{{restaurant.description}}</td>
+  </tr>
+</table>
