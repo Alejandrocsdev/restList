@@ -34,4 +34,9 @@
 
 03 modify rest migration file ([d9ba046](https://github.com/Alejandrocsdev/restList/commit/d9ba046b81d3c18b465cc69614f012192ba5a04f))
 
-04 add rest seeder ([](https://github.com/Alejandrocsdev/restList/commit/))
+04 add rest seeder ([55e0c07](https://github.com/Alejandrocsdev/restList/commit/55e0c0724993ba1f7cbbcdf2a5590a2248f04546))
+
+### Features
+
+05 implement get rest list ([](https://github.com/Alejandrocsdev/restList/commit/))
+
