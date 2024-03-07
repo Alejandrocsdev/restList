@@ -28,4 +28,6 @@
 
 ### Build
 
-01 router init ([](https://github.com/Alejandrocsdev/restList/commit/))
+01 router init ([fcb87d0](https://github.com/Alejandrocsdev/restList/commit/fcb87d05db4e43ae716fcb6f0250abc0a4a4aa85))
+
+02 install & initialize sequelize ([](https://github.com/Alejandrocsdev/restList/commit/))

@@ -5,7 +5,10 @@ const app = express()
 const port = 3000
 // import json data
 const restaurants = require('./public/json/restaurant.json').results
-
+const db = require('./models') // import from models
+const rest = db.rest // declare model name
+// (table: plural) (model: singular => plural)
+// (table must end with 's')
 // template engine
 app.engine('.hbs', engine({ extname: '.hbs' }))
 app.set('view engine', '.hbs')
