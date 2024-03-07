@@ -30,10 +30,30 @@ app.get('/restaurants', (req, res) => {
   res.render('index', { restaurants: matched, keyword })
 })
 
+app.get('/restaurant/new', (req, res) => {
+	res.send('create restaurant')
+})
+
+app.post('/restaurants', (req, res) => {
+	res.send('add restaurant')
+})
+
 app.get('/restaurant/:id', (req, res) => {
   const id = req.params.id
   const restaurant = restaurants.find((rest) => rest.id.toString() === id)
   res.render('detail', { restaurant })
+})
+
+app.get('/restaurant/:id/edit', (req, res) => {
+	res.send(`get restaurant edit: ${req.params.id}`)
+})
+
+app.put('/restaurant/:id', (req, res) => {
+	res.send('modify restaurant')
+})
+
+app.delete('/restaurant/:id', (req, res) => {
+	res.send('delete restaurant')
 })
 
 app.listen(port, () => {
