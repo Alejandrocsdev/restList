@@ -32,4 +32,6 @@
 
 02 install & initialize sequelize ([0dfb59b](https://github.com/Alejandrocsdev/restList/commit/0dfb59bc0a70d377c8e08711be3ee7b596eeefb6))
 
-03 modify rest migration file ([](https://github.com/Alejandrocsdev/restList/commit/))
+03 modify rest migration file ([d9ba046](https://github.com/Alejandrocsdev/restList/commit/d9ba046b81d3c18b465cc69614f012192ba5a04f))
+
+04 add rest seeder ([](https://github.com/Alejandrocsdev/restList/commit/))
