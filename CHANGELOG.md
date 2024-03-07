@@ -16,4 +16,6 @@
 
 05 add listing page ([a62c645](https://github.com/Alejandrocsdev/restList/commit/a62c64547d08bca3ef79ede4af80bbde2c946d5d))
 
-06 add detail page ([](https://github.com/Alejandrocsdev/restList/commit/))
+06 add detail page ([e4795f7](https://github.com/Alejandrocsdev/restList/commit/e4795f77850c1a0475982c51dbb0ae3c6f463dd9))
+
+07 add search funtion to listing ([](https://github.com/Alejandrocsdev/restList/commit/))

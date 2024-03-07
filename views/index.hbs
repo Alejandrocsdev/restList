@@ -1,9 +1,11 @@
 <div class="search-bar">
-  <label for="search">Search</label>
-  <input type="text" id="search">
-  <button>
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
+  <form class="search-bar-form" action="/restaurants">
+    <label for="search">Search</label>
+    <input type="text" id="search" value="{{keyword}}" name="search">
+    <button type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </form>
 </div>
 <div class="restaurants-container">
   {{#each restaurants}}

@@ -60,24 +60,28 @@ main {
   border-radius: 6px;
   border: 2px solid #353535;
   display: flex;
-  justify-content: center;
+}
+
+.search-bar-form {
+  width: 100%;
+  display: flex;
   align-items: center;
 }
 
-.search-bar>label {
+.search-bar-form>label {
   margin-right: 10px;
 }
 
-.search-bar>input {
+.search-bar-form>input {
   width: 100%;
 }
 
-.search-bar>button {
+.search-bar-form>button {
   width: 100px;
   margin-left: 10px;
 }
 
-.search-bar>button:hover {
+.search-bar-form>button:hover {
   cursor: pointer;
 }
 
