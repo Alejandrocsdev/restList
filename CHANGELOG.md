@@ -30,4 +30,6 @@
 
 01 router init ([fcb87d0](https://github.com/Alejandrocsdev/restList/commit/fcb87d05db4e43ae716fcb6f0250abc0a4a4aa85))
 
-02 install & initialize sequelize ([](https://github.com/Alejandrocsdev/restList/commit/))
+02 install & initialize sequelize ([0dfb59b](https://github.com/Alejandrocsdev/restList/commit/0dfb59bc0a70d377c8e08711be3ee7b596eeefb6))
+
+03 modify rest migration file ([](https://github.com/Alejandrocsdev/restList/commit/))
