@@ -15,38 +15,52 @@ app.set('view engine', '.hbs')
 app.set('views', './views')
 // static files
 app.use(express.static('public'))
+// form data
+app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
   res.redirect('/restaurants')
 })
 
-// app.get('/restaurants', (req, res) => {
-//   const keyword = req.query.search?.trim()
-//   const matched = keyword ? restaurants.filter((rest) =>
-//     Object.values(rest).some((property) => {
-//       if (typeof property === 'string') {
-//         return property.toLowerCase().includes(keyword.toLowerCase())
-//       }
-//       return false
-//     })
-//   ) : restaurants
-//   res.render('index', { restaurants: matched, keyword })
-// })
-
-app.get('/restaurants', (req, res) => {
-	return rest.findAll({
-		// attributes: ['id', 'name', 'name_en', 'category', 'image', 'location', 'phone', 'google_map', 'rating', 'description'],
-		raw: true
-	})
-		.then((restaurants) => res.render('index', { restaurants }))
+app.get('/restaurant/new', (req, res) => {
+  res.render('create')
 })
 
-app.get('/restaurant/new', (req, res) => {
-	res.send('create restaurant')
+app.get('/restaurants', (req, res) => {
+  const index = true
+  const keyword = req.query.search?.trim() // search = form name
+  rest
+    .findAll({
+      // attributes: ['id', 'name', 'name_en', 'category', 'image', 'location', 'phone', 'google_map', 'rating', 'description'],
+      raw: true
+    })
+    .then((restaurants) => {
+      const matched = keyword
+        ? restaurants.filter((restaurant) =>
+            Object.values(restaurant).some((property) => {
+              if (typeof property === 'string') {
+                return property.toLowerCase().includes(keyword.toLowerCase())
+              }
+            })
+          )
+        : restaurants
+      res.render('index', { restaurants: matched, index, keyword })
+    })
 })
 
 app.post('/restaurants', (req, res) => {
-	res.send('add restaurant')
+  const name = req.body.name
+  const name_en = req.body.name_en
+  const category = req.body.category
+  const image = req.body.image
+  const location = req.body.location
+  const phone = req.body.phone
+  const google_map = req.body.google_map
+  const rating = req.body.rating
+  const description = req.body.description
+  return rest
+    .create({ name, name_en, category, image, location, phone, google_map, rating, description })
+    .then(() => res.redirect('/restaurants'))
 })
 
 app.get('/restaurant/:id', (req, res) => {
@@ -56,15 +70,15 @@ app.get('/restaurant/:id', (req, res) => {
 })
 
 app.get('/restaurant/:id/edit', (req, res) => {
-	res.send(`get restaurant edit: ${req.params.id}`)
+  res.send(`get restaurant edit: ${req.params.id}`)
 })
 
 app.put('/restaurant/:id', (req, res) => {
-	res.send('modify restaurant')
+  res.send('modify restaurant')
 })
 
 app.delete('/restaurant/:id', (req, res) => {
-	res.send('delete restaurant')
+  res.send('delete restaurant')
 })
 
 app.listen(port, () => {
