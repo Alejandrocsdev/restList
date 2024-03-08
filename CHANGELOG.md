@@ -46,4 +46,6 @@
 
 08 implement updating rest ([ca7ed2e](https://github.com/Alejandrocsdev/restList/commit/ca7ed2e5dc2595cbb2619afc7705d5ff2cb8762f))
 
-09 implement deleting rest ([](https://github.com/Alejandrocsdev/restList/commit/))
+09 implement deleting rest ([b25f32e](https://github.com/Alejandrocsdev/restList/commit/b25f32eca40a874a29c8af1d3d537a0b63c89388))
+
+10 add create page return & reset function ([](https://github.com/Alejandrocsdev/restList/commit/))

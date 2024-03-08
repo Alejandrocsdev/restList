@@ -90,10 +90,6 @@ app.get('/restaurant/:id/edit', (req, res) => {
     .then((restaurant) => res.render('edit', { restaurant }))
 })
 
-// app.put('/restaurant/:id', (req, res) => {
-//   res.send('modify restaurant')
-// })
-
 app.put('/restaurant/:id', (req, res) => {
   const body = req.body
   const id = req.params.id
@@ -117,10 +113,6 @@ app.put('/restaurant/:id', (req, res) => {
     )
     .then(() => res.redirect(`/restaurant/${id}`))
 })
-
-// app.delete('/restaurant/:id', (req, res) => {
-//   res.send('delete restaurant')
-// })
 
 app.delete('/restaurant/:id', (req, res) => {
 	const id = req.params.id
