@@ -24,7 +24,7 @@
     {{#if editDelete}}
     <div class="edit-delete">
       <a class="edit-link" href="{{restaurant.id}}/edit">編輯</a>
-      <form class="delete-form" action="restaurant/{{restaurant.id}}?_method=DELETE" method="POST">
+      <form class="delete-form" action="/restaurant/{{restaurant.id}}?_method=DELETE" method="POST">
         <button class="delete-btn" type="submit">刪除</button>
       </form>
     </div>
