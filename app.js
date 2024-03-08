@@ -64,9 +64,13 @@ app.post('/restaurants', (req, res) => {
 })
 
 app.get('/restaurant/:id', (req, res) => {
-  const id = req.params.id
-  const restaurant = restaurants.find((rest) => rest.id.toString() === id)
-  res.render('detail', { restaurant })
+	const id = req.params.id
+
+	return rest.findByPk(id, {
+		// attributes: ['id', 'name', 'name_en', 'category', 'image', 'location', 'phone', 'google_map', 'rating', 'description'],
+		raw: true
+	})
+		.then((restaurant) => res.render('detail', { restaurant }))
 })
 
 app.get('/restaurant/:id/edit', (req, res) => {
