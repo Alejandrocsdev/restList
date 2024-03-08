@@ -42,4 +42,6 @@
 
 06 implement creating rest ([2489b38](https://github.com/Alejandrocsdev/restList/commit/2489b387479571194309103e81a348c4dd31b0b8))
 
-07 implement viewing rest ([](https://github.com/Alejandrocsdev/restList/commit/))
+07 implement viewing rest ([f72ada4](https://github.com/Alejandrocsdev/restList/commit/f72ada4c220cbf72d7a4a4b508fc7a57d59720fe))
+
+08 implement updating rest ([](https://github.com/Alejandrocsdev/restList/commit/))

@@ -41,6 +41,8 @@ header {
   color: #353535;
 }
 
+/* create button */
+
 .create {
   width: 80px;
   height: 40px;
@@ -64,6 +66,51 @@ header {
   font-weight: 700;
   text-decoration: none;
   color: #353535;
+}
+
+/* edit & delete button */
+
+.edit-delete {
+  width: 160px;
+  height: 40px;
+  background-color: #8d99ae;
+  border-radius: 10px;
+  border: 2px solid #353535;
+  position: absolute;
+  right: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.edit-link,
+.delete-btn {
+  width: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  color: #353535;
+  background-color: #34a0a4;
+  border-radius: 10px;
+  border: 2px solid #353535;
+}
+
+.edit-link {
+  background-color: #34a0a4;
+}
+
+.delete-btn {
+  background-color: #c9184a;
+}
+
+.edit-link:hover,
+.delete-btn:hover {
+  cursor: pointer;
+  filter: brightness(1.5);
+  color: black;
+  border: 2px solid black;
 }
 
 main {
@@ -174,41 +221,49 @@ td:first-child {
   text-wrap: nowrap;
 }
 
-/* create.hbs */
+/* create.hbs & edit.hbs */
 
-.create-div {
+.create-div,
+.edit-div {
   margin-bottom: 20px;
   display: flex;
 }
 
-.create-label {
+.create-label,
+.edit-label {
   width: 100px;
   text-align: center;
   text-wrap: nowrap;
 }
 
-.create-colon {
+.create-colon,
+.edit-colon {
   margin-right: 10px;
 }
 
-.create-input {
+.create-input,
+.edit-input {
   width: 100%;
 }
 
-.create-btn {
+.create-btn,
+.edit-btn {
   display: flex;
   justify-content: end;
 }
 
-.create-btn>button {
+.create-btn>button,
+.edit-btn>button {
   width: 60px;
   margin-left: 16px;
   border-radius: 10px;
   border: 2px solid #353535;
   font-weight: 700;
+  transition: 0.5s;
 }
 
-.create-btn>button:hover {
+.create-btn>button:hover,
+.edit-btn>button:hover {
   cursor: pointer;
 }
 
@@ -216,22 +271,18 @@ td:first-child {
   background-color: #34a0a4;
 }
 
-.submit-btn:hover {
-  background-color: rgba(52, 160, 164, 0.5)
-}
-
 .reset-btn {
   background-color: #c9184a;
-}
-
-.reset-btn:hover {
-  background-color: rgba(201, 24, 74, 0.5)
 }
 
 .return-btn {
   background-color: #778da9;
 }
 
+.submit-btn:hover,
+.reset-btn:hover,
 .return-btn:hover {
-  background-color: rgba(119, 141, 169, 0.5)
+  filter: brightness(1.5);
+  color: black;
+  border: 2px solid black;
 }

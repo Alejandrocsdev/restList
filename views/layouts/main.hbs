@@ -18,7 +18,15 @@
     </div>
     {{#if index}}
     <div class="create">
-      <a class="create-link" href="./restaurant/new">新增</a>
+      <a class="create-link" href="restaurant/new">新增</a>
+    </div>
+    {{/if}}
+    {{#if editDelete}}
+    <div class="edit-delete">
+      <a class="edit-link" href="{{restaurant.id}}/edit">編輯</a>
+      <form class="delete-form" action="restaurant/{{restaurant.id}}?_method=DELETE" method="POST">
+        <button class="delete-btn" type="submit">刪除</button>
+      </form>
     </div>
     {{/if}}
   </header>
