@@ -22,9 +22,9 @@
 
 ### Document
 
-07 update README.md ([fc32cbb](https://github.com/Alejandrocsdev/restList/commit/fc32cbb1b7f7fa7c7b89f9be120419f3b44cec11))
+08 update README.md ([fc32cbb](https://github.com/Alejandrocsdev/restList/commit/fc32cbb1b7f7fa7c7b89f9be120419f3b44cec11))
 
-## [C4M1] (2024-03-07)
+## [C4M1] (2024-03-09)
 
 ### Build
 
@@ -48,4 +48,6 @@
 
 09 implement deleting rest ([b25f32e](https://github.com/Alejandrocsdev/restList/commit/b25f32eca40a874a29c8af1d3d537a0b63c89388))
 
-10 add create page return & reset function ([](https://github.com/Alejandrocsdev/restList/commit/))
+10 add create page return & reset function ([b3d8b8e](https://github.com/Alejandrocsdev/restList/commit/b3d8b8e0764f289878e19c2327e635b2a41efa63))
+
+11 add edit page return & reset function ([](https://github.com/Alejandrocsdev/restList/commit/))

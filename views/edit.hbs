@@ -42,10 +42,11 @@
     <input class="edit-input" type="text" id="google_map" name="google_map" value="{{restaurant.google_map}}">
   </div>
 {{!-- rating --}}
+{{!-- type="number" min="1" max="5" step="0.1" --}}
   <div class="edit-div">
     <label class="edit-label" for="rating">評分</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="number" id="rating" name="rating" value="{{restaurant.rating}}">
+    <input class="edit-input" type="number" min="1" max="5" step="0.1" id="rating" name="rating" value="{{restaurant.rating}}">
   </div>
 {{!-- description --}}
   <div class="edit-div">
@@ -56,7 +57,7 @@
 {{!-- button --}}
   <div class="edit-btn">
     <button class="submit-btn" type="submit">提交</button>
-    <button class="reset-btn">移除</button>
+    <button class="reset-btn">重置</button>
     <button class="return-btn">返回</button>
   </div>
 </form>
