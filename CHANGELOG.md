@@ -50,4 +50,8 @@
 
 10 add create page return & reset function ([b3d8b8e](https://github.com/Alejandrocsdev/restList/commit/b3d8b8e0764f289878e19c2327e635b2a41efa63))
 
-11 add edit page return & reset function ([](https://github.com/Alejandrocsdev/restList/commit/))
+11 add edit page return & reset function ([fd3f85a](https://github.com/Alejandrocsdev/restList/commit/fd3f85af825ad94abc812fa200022e8cd9ed329b))
+
+### Document
+
+12 update README.md ([](https://github.com/Alejandrocsdev/restList/commit/))
