@@ -157,6 +157,13 @@ main {
   cursor: pointer;
 }
 
+.sort {
+  width: 100px;
+  height: 22px;
+  margin-left: 10px;
+  text-align: center;
+}
+
 .restaurants-container {
   padding: 10px;
   background-color: #b08968;
@@ -265,6 +272,16 @@ td:first-child {
 .create-btn>button:hover,
 .edit-btn>button:hover {
   cursor: pointer;
+}
+
+.create-input:valid,
+.edit-input:valid {
+  border: 2px solid green;
+}
+
+.create-input:invalid,
+.edit-input:invalid {
+  border: 2px solid red;
 }
 
 .submit-btn {

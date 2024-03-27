@@ -1,5 +1,7 @@
 const origin = window.location.origin
 const reset = {}
+// sort
+const select = document.querySelector('.sort')
 // create page
 const createBtns = document.querySelector('.create-btn')
 const createInput = document.querySelectorAll('.create-input')
@@ -10,8 +12,42 @@ const editInput = document.querySelectorAll('.edit-input')
 init()
 
 function init() {
+  select.addEventListener('change', sort)
   createPage()
   editPage()
+}
+
+function sort(event) {
+  const restaurants = Array.from(document.querySelectorAll('.restaurants-container > a'))
+
+  const value = this.value
+
+  restaurants.sort((a, b) => {
+    const nameA = a.querySelector('.restaurant-name').innerText
+    const nameB = b.querySelector('.restaurant-name').innerText
+    const rateA = a.querySelector('.restaurant-rating').innerText
+    const rateB = b.querySelector('.restaurant-rating').innerText
+    const idA = String(a['href'].split('/').slice(-1))
+    const idB = String(b['href'].split('/').slice(-1))
+
+    if (value === 'name-ascend') {
+      return nameA.localeCompare(nameB)
+    } else if (value === 'name-descend') {
+      return nameB.localeCompare(nameA)
+    } else if (value === 'rate-ascend') {
+      return rateA.localeCompare(rateB)
+    } else if (value === 'rate-descend') {
+      return rateB.localeCompare(rateA)
+    } else if (value === 'default') {
+      return idA.localeCompare(idB)
+    }
+  })
+
+  const container = document.querySelector('.restaurants-container')
+  container.innerHTML = ''
+  restaurants.forEach((restaurant) => {
+    container.appendChild(restaurant)
+  })
 }
 
 function createPage() {

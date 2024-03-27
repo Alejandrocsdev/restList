@@ -54,4 +54,8 @@
 
 ### Document
 
-12 update README.md ([](https://github.com/Alejandrocsdev/restList/commit/))
+12 update README.md ([8fbd5a0](https://github.com/Alejandrocsdev/restList/commit/8fbd5a06c53b1f8a1ac5681d373a3f52aa287c98))
+
+## [C4M2] (2024-03-27)
+
+01 add sort options ([](https://github.com/Alejandrocsdev/restList/commit/))

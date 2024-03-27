@@ -1,60 +1,65 @@
 <form class="edit-form" action="/restaurant/{{restaurant.id}}?_method=PUT" method="POST">
-{{!-- name --}}
+  {{!-- name --}}
   <div class="edit-div">
     <label class="edit-label" for="name">餐廳名稱</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="text" id="name" name="name" value="{{restaurant.name}}">
+    <input class="edit-input" type="text" maxlength="20" id="name" name="name" value="{{restaurant.name}}" required>
   </div>
-{{!-- name_en --}}
+  {{!-- name_en --}}
   <div class="edit-div">
     <label class="edit-label" for="name_en">英文名稱</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="text" id="name_en" name="name_en" value="{{restaurant.name_en}}">
+    <input class="edit-input" type="text" maxlength="20" id="name_en" name="name_en" value="{{restaurant.name_en}}"
+      required>
   </div>
-{{!-- category --}}
+  {{!-- category --}}
   <div class="edit-div">
     <label class="edit-label" for="category">分類</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="text" id="category" name="category" value="{{restaurant.category}}">
+    <input class="edit-input" type="text" id="category" name="category" value="{{restaurant.category}}" required>
   </div>
-{{!-- image --}}
+  {{!-- image --}}
   <div class="edit-div">
     <label class="edit-label" for="image">圖片連結</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="text" id="image" name="image" value="{{restaurant.image}}">
+    <input class="edit-input" type="url" pattern="https?://.+" id="image" name="image" value="{{restaurant.image}}"
+      required>
   </div>
-{{!-- location --}}
+  {{!-- location --}}
   <div class="edit-div">
     <label class="edit-label" for="location">地址</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="text" id="location" name="location" value="{{restaurant.location}}">
+    <input class="edit-input" type="text" id="location" name="location" value="{{restaurant.location}}" required>
   </div>
-{{!-- phone --}}
+  {{!-- phone --}}
   <div class="edit-div">
     <label class="edit-label" for="phone">電話</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="text" id="phone" name="phone" value="{{restaurant.phone}}">
+    <input class="edit-input" type="tel" pattern="^\d{2} \d{4} \d{4}$" id="phone" name="phone"
+      value="{{restaurant.phone}}" placeholder="01 2345 6789" required>
   </div>
-{{!-- google_map --}}
+  {{!-- google_map --}}
   <div class="edit-div">
     <label class="edit-label" for="google_map">地圖連結</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="text" id="google_map" name="google_map" value="{{restaurant.google_map}}">
+    <input class="edit-input" type="url" pattern="https?://.+" id="google_map" name="google_map"
+      value="{{restaurant.google_map}}" required>
   </div>
-{{!-- rating --}}
-{{!-- type="number" min="1" max="5" step="0.1" --}}
+  {{!-- rating --}}
+  {{!-- type="number" min="1" max="5" step="0.1" --}}
   <div class="edit-div">
     <label class="edit-label" for="rating">評分</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="number" min="1" max="5" step="0.1" id="rating" name="rating" value="{{restaurant.rating}}">
+    <input class="edit-input" type="number" min="1" max="5" step="0.1" id="rating" name="rating"
+      value="{{restaurant.rating}}" required>
   </div>
-{{!-- description --}}
+  {{!-- description --}}
   <div class="edit-div">
     <label class="edit-label" for="description">介紹</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="text" id="description" name="description" value="{{restaurant.name}}">
+    <input class="edit-input" type="text" id="description" name="description" value="{{restaurant.name}}" required>
   </div>
-{{!-- button --}}
+  {{!-- button --}}
   <div class="edit-btn">
     <button class="submit-btn" type="submit">提交</button>
     <button class="reset-btn">重置</button>

@@ -1,60 +1,61 @@
 <form class="create-form" action="/restaurants" method="POST">
-{{!-- name --}}
+  {{!-- name --}}
   <div class="create-div">
     <label class="create-label" for="name">餐廳名稱</label>
     <div class="create-colon">:</div>
-    <input class="create-input" type="text" id="name" name="name">
+    <input class="create-input" type="text" maxlength="20" id="name" name="name" required>
   </div>
-{{!-- name_en --}}
+  {{!-- name_en --}}
   <div class="create-div">
     <label class="create-label" for="name_en">英文名稱</label>
     <div class="create-colon">:</div>
-    <input class="create-input" type="text" id="name_en" name="name_en">
+    <input class="create-input" type="text" maxlength="20" id="name_en" name="name_en" required>
   </div>
-{{!-- category --}}
+  {{!-- category --}}
   <div class="create-div">
     <label class="create-label" for="category">分類</label>
     <div class="create-colon">:</div>
-    <input class="create-input" type="text" id="category" name="category">
+    <input class="create-input" type="text" id="category" name="category" required>
   </div>
-{{!-- image --}}
+  {{!-- image --}}
   <div class="create-div">
     <label class="create-label" for="image">圖片連結</label>
     <div class="create-colon">:</div>
-    <input class="create-input" type="text" id="image" name="image">
+    <input class="create-input" type="url" pattern="https?://.+" id="image" name="image" required>
   </div>
-{{!-- location --}}
+  {{!-- location --}}
   <div class="create-div">
     <label class="create-label" for="location">地址</label>
     <div class="create-colon">:</div>
-    <input class="create-input" type="text" id="location" name="location">
+    <input class="create-input" type="text" id="location" name="location" required>
   </div>
-{{!-- phone --}}
+  {{!-- phone --}}
   <div class="create-div">
     <label class="create-label" for="phone">電話</label>
     <div class="create-colon">:</div>
-    <input class="create-input" type="text" id="phone" name="phone">
+    <input class="create-input" type="tel" pattern="^\d{2} \d{4} \d{4}$" id="phone" name="phone"
+      placeholder="01 2345 6789" required>
   </div>
-{{!-- google_map --}}
+  {{!-- google_map --}}
   <div class="create-div">
     <label class="create-label" for="google_map">地圖連結</label>
     <div class="create-colon">:</div>
-    <input class="create-input" type="text" id="google_map" name="google_map">
+    <input class="create-input" type="url" pattern="https?://.+" id="google_map" name="google_map" required>
   </div>
-{{!-- rating --}}
-{{!-- type="number" min="1" max="5" step="0.1" --}}
+  {{!-- rating --}}
+  {{!-- type="number" min="1" max="5" step="0.1" --}}
   <div class="create-div">
     <label class="create-label" for="rating">評分</label>
     <div class="create-colon">:</div>
-    <input class="create-input" type="number" min="1" max="5" step="0.1" id="rating" name="rating">
+    <input class="create-input" type="number" min="1" max="5" step="0.1" value="1" id="rating" name="rating" required>
   </div>
-{{!-- description --}}
+  {{!-- description --}}
   <div class="create-div">
     <label class="create-label" for="description">介紹</label>
     <div class="create-colon">:</div>
-    <input class="create-input" type="text" id="description" name="description">
+    <input class="create-input" type="text" id="description" name="description" required>
   </div>
-{{!-- button --}}
+  {{!-- button --}}
   <div class="create-btn">
     <button class="submit-btn" type="submit">新增</button>
     <button class="reset-btn">移除</button>
