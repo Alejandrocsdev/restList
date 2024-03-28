@@ -35,6 +35,8 @@ app.get('/restaurant/new', (req, res) => {
 })
 
 app.get('/restaurants', (req, res) => {
+  const page = Number(req.query.page) || 1
+  const limit = 2
   const index = true
   const keyword = req.query.search?.trim() // search = form name
   rest
@@ -69,7 +71,14 @@ app.get('/restaurants', (req, res) => {
             })
           )
         : restaurants
-      res.render('index', { restaurants: matched, index, keyword })
+      res.render('index', {
+        restaurants: matched.slice((page - 1) * limit, page * limit),
+        prev: page > 1 ? page - 1 : page,
+        next: page + 1,
+        page,
+        index,
+        keyword
+      })
     })
 })
 

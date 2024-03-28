@@ -66,4 +66,6 @@
 
 04 modify categoryId migration file ([3931c86](https://github.com/Alejandrocsdev/restList/commit/3931c8621868f61cb3590942f0e59d4f8f745d35))
 
-04 modify sort options logic ([](https://github.com/Alejandrocsdev/restList/commit/))
+04 modify sort options logic ([47ab438](https://github.com/Alejandrocsdev/restList/commit/47ab4384552c96ad2d7ab46f2192fb09f55e6eb4))
+
+05 add pagination ([](https://github.com/Alejandrocsdev/restList/commit/))
