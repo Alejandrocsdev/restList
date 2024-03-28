@@ -62,4 +62,6 @@
 
 02 add categories table ([cf1d8b4](https://github.com/Alejandrocsdev/restList/commit/cf1d8b4d2499b4b63b75b9c4cbfa73cab3f05da8))
 
-03 add categoryId ([](https://github.com/Alejandrocsdev/restList/commit/))
+03 add categoryId ([9ccc4bb](https://github.com/Alejandrocsdev/restList/commit/9ccc4bb3541178c74d0a7ac34e7f6e28adbea523))
+
+04 modify categoryId migration file ([](https://github.com/Alejandrocsdev/restList/commit/))

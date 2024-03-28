@@ -13,8 +13,6 @@ const port = 3000
 // model
 const rest = db.rest
 const category = db.category
-// note: (table: plural) (model: singular => plural)
-// note: (table must end with 's')
 // template engine
 app.engine('.hbs', engine({ extname: '.hbs' }))
 app.set('view engine', '.hbs')
@@ -62,7 +60,6 @@ app.get('/restaurants', (req, res) => {
       raw: true
     })
     .then((restaurants) => {
-      console.log(restaurants)
       const matched = keyword
         ? restaurants.filter((restaurant) =>
             Object.values(restaurant).some((property) => {
@@ -88,7 +85,7 @@ app.post('/restaurants', (req, res) => {
   const categoryId = req.body.categoryId
   return rest
     .create({ name, name_en, image, location, phone, google_map, rating, description, categoryId })
-    .then((restaurant) => {
+    .then(() => {
       res.redirect('/restaurants')
     })
 })
