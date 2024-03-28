@@ -58,4 +58,6 @@
 
 ## [C4M2] (2024-03-27)
 
-01 add sort options ([](https://github.com/Alejandrocsdev/restList/commit/))
+01 add sort options ([2977521](https://github.com/Alejandrocsdev/restList/commit/29775211527b841c78805e3dda836f41c01915e8))
+
+02 add categories table ([](https://github.com/Alejandrocsdev/restList/commit/))
