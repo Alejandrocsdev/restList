@@ -64,4 +64,6 @@
 
 03 add categoryId ([9ccc4bb](https://github.com/Alejandrocsdev/restList/commit/9ccc4bb3541178c74d0a7ac34e7f6e28adbea523))
 
-04 modify categoryId migration file ([](https://github.com/Alejandrocsdev/restList/commit/))
+04 modify categoryId migration file ([3931c86](https://github.com/Alejandrocsdev/restList/commit/3931c8621868f61cb3590942f0e59d4f8f745d35))
+
+04 modify sort options logic ([](https://github.com/Alejandrocsdev/restList/commit/))
