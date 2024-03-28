@@ -60,4 +60,6 @@
 
 01 add sort options ([2977521](https://github.com/Alejandrocsdev/restList/commit/29775211527b841c78805e3dda836f41c01915e8))
 
-02 add categories table ([](https://github.com/Alejandrocsdev/restList/commit/))
+02 add categories table ([cf1d8b4](https://github.com/Alejandrocsdev/restList/commit/cf1d8b4d2499b4b63b75b9c4cbfa73cab3f05da8))
+
+03 add categoryId ([](https://github.com/Alejandrocsdev/restList/commit/))

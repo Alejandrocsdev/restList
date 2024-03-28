@@ -16,7 +16,13 @@
   <div class="edit-div">
     <label class="edit-label" for="category">分類</label>
     <div class="edit-colon">:</div>
-    <input class="edit-input" type="text" id="category" name="category" value="{{restaurant.category}}" required>
+    {{!-- <input class="edit-input" type="text" id="category" name="category" value="{{restaurant.category}}" required> --}}
+    <select class="edit-input" id="category" name="categoryId" required>
+      <option value="{{restaurant.categoryId}}" selected hidden>{{restaurant.category}}</option>
+      {{#each categories}}
+      <option value={{this.id}}>{{this.name}}</option>
+      {{/each}}
+    </select>
   </div>
   {{!-- image --}}
   <div class="edit-div">
