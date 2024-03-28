@@ -209,6 +209,32 @@ main {
   margin: 0;
 }
 
+.pagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pagination>form>button {
+  padding: 4px 8px;
+  background-color: #8d99ae;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 2px solid #353535;
+  color: #353535;
+  transition: 0.5s;
+}
+
+.pagination>form>button:hover {
+  cursor: pointer;
+  background-color: #d9d9d9;
+}
+
+.current-page {
+  display: block;
+  text-align: center;
+}
+
 /* detail.hbs */
 
 .map-link {

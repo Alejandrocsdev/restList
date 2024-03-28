@@ -35,51 +35,55 @@ app.get('/restaurant/new', (req, res) => {
 })
 
 app.get('/restaurants', (req, res) => {
-  const page = Number(req.query.page) || 1
-  const limit = 2
-  const index = true
-  const keyword = req.query.search?.trim() // search = form name
-  rest
-    .findAll({
-      attributes: [
-        'id',
-        'name',
-        'name_en',
-        'image',
-        'location',
-        'phone',
-        'google_map',
-        'rating',
-        'description',
-        [Sequelize.col('category.name'), 'category']
-      ],
-      include: [
-        {
-          model: category,
-          attributes: ['name']
-        }
-      ],
-      raw: true
-    })
-    .then((restaurants) => {
-      const matched = keyword
-        ? restaurants.filter((restaurant) =>
-            Object.values(restaurant).some((property) => {
-              if (typeof property === 'string') {
-                return property.toLowerCase().includes(keyword.toLowerCase())
-              }
-            })
-          )
-        : restaurants
-      res.render('index', {
-        restaurants: matched.slice((page - 1) * limit, page * limit),
-        prev: page > 1 ? page - 1 : page,
-        next: page + 1,
-        page,
-        index,
-        keyword
+  rest.count().then((total) => {
+    const page = Number(req.query.page) || 1
+    const limit = 3
+    const index = true
+    const keyword = req.query.search?.trim() // search = form name
+    rest
+      .findAll({
+        attributes: [
+          'id',
+          'name',
+          'name_en',
+          'image',
+          'location',
+          'phone',
+          'google_map',
+          'rating',
+          'description',
+          [Sequelize.col('category.name'), 'category']
+        ],
+        include: [
+          {
+            model: category,
+            attributes: ['name']
+          }
+        ],
+        offset: (page - 1) * limit,
+        limit,
+        raw: true
       })
-    })
+      .then((restaurants) => {
+        const matched = keyword
+          ? restaurants.filter((restaurant) =>
+              Object.values(restaurant).some((property) => {
+                if (typeof property === 'string') {
+                  return property.toLowerCase().includes(keyword.toLowerCase())
+                }
+              })
+            )
+          : restaurants
+        res.render('index', {
+          restaurants: matched,
+          prev: page > 1 ? page - 1 : page,
+          next: page * limit < total ? page + 1 : page,
+          page,
+          index,
+          keyword
+        })
+      })
+  })
 })
 
 app.post('/restaurants', (req, res) => {

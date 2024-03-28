@@ -7,7 +7,7 @@
     </button>
     <select class="sort">
       <option class="sort-opt" disabled selected>文章排序</option>
-      <option class="sort-opt" value="default">default</option>
+      <option class="sort-opt" value="default">預設</option>
       <option class="sort-opt" value="name-descend">A => Z</option>
       <option class="sort-opt" value="name-ascend">Z => A</option>
       <option class="sort-opt" value="rate-descend">5 => 1</option>
@@ -34,12 +34,14 @@
   </a>
   {{/each}}
 </div>
-<form action="/restaurants" method="GET" style="display: inline;">
-  <input type="hidden" name="page" value="{{prev}}">
-  <button type="submit">prev</button>
-</form>
-<form action="/restaurants" method="GET" style="display: inline;">
-  <input type="hidden" name="page" value="{{next}}">
-  <button type="submit">next</button>
-</form>
-<span>page: {{page}}</span>
+<div class="pagination">
+  <form action="/restaurants">
+    <input type="hidden" name="page" value="{{prev}}">
+    <button type="submit">prev</button>
+  </form>
+  <form action="/restaurants">
+    <input type="hidden" name="page" value="{{next}}">
+    <button type="submit">next</button>
+  </form>
+</div>
+<span class="current-page">page: {{page}}</span>

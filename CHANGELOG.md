@@ -68,4 +68,6 @@
 
 04 modify sort options logic ([47ab438](https://github.com/Alejandrocsdev/restList/commit/47ab4384552c96ad2d7ab46f2192fb09f55e6eb4))
 
-05 add pagination ([](https://github.com/Alejandrocsdev/restList/commit/))
+05 add pagination ([49557a3](https://github.com/Alejandrocsdev/restList/commit/49557a3f21b653cb5c600db90a21d9d436601e73))
+
+06 add pagination style & limit ([](https://github.com/Alejandrocsdev/restList/commit/))
