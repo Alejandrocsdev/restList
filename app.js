@@ -8,6 +8,8 @@ const methodOverride = require('method-override')
 // const restaurants = require('./public/json/restaurant.json').results
 // router
 const router = require('./routes')
+const messageHandler = require('./middlewares/message-handler')
+const errorHandler = require('./middlewares/error-handler')
 // app
 const app = express()
 // server
@@ -32,7 +34,12 @@ app.use(
 )
 // flash messages: manage messages in stateless HTTP requests
 app.use(flash())
+
+// before (router) & after (session / flash)
+app.use(messageHandler)
 app.use(router)
+// after (router)
+app.use(errorHandler)
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}/restaurants`)

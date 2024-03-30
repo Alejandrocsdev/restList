@@ -1,6 +1,4 @@
-{{#if error}}
-<div class="error">{{error}}</div>
-{{/if}}
+{{> message}}
 <form class="edit-form" action="/restaurant/{{restaurant.id}}?_method=PUT" method="POST">
   {{!-- name --}}
   <div class="edit-div">
