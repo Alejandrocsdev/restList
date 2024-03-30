@@ -1,3 +1,6 @@
+{{#if message}}
+<div class="message">{{message}}</div>
+{{/if}}
 <div class="search-bar">
   <form class="search-bar-form" action="/restaurants">
     <label for="search">Search</label>
@@ -44,4 +47,4 @@
     <button type="submit">next</button>
   </form>
 </div>
-<span class="current-page">page: {{page}}</span>
+<span class="current-page">{{page}}</span>

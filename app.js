@@ -2,6 +2,8 @@
 const { Sequelize } = require('sequelize')
 const express = require('express')
 const { engine } = require('express-handlebars')
+const flash = require('connect-flash')
+const session = require('express-session')
 const db = require('./models')
 const methodOverride = require('method-override')
 // json
@@ -23,6 +25,16 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 // handle put, patch, delete
 app.use(methodOverride('_method'))
+// handle session signing and verifying
+app.use(
+  session({
+    secret: 'ThisIsSecret',
+    resave: false,
+    saveUninitialized: false
+  })
+)
+// flash messages: manage messages in stateless HTTP requests
+app.use(flash())
 
 app.get('/', (req, res) => {
   res.redirect('/restaurants')
@@ -80,7 +92,8 @@ app.get('/restaurants', (req, res) => {
           next: page * limit < total ? page + 1 : page,
           page,
           index,
-          keyword
+          keyword,
+          message: req.flash('success')
         })
       })
   })
@@ -99,7 +112,8 @@ app.post('/restaurants', (req, res) => {
   return rest
     .create({ name, name_en, image, location, phone, google_map, rating, description, categoryId })
     .then(() => {
-      res.redirect('/restaurants')
+      req.flash('success', '新增成功!')
+      return res.redirect('/restaurants')
     })
 })
 
@@ -128,7 +142,7 @@ app.get('/restaurant/:id', (req, res) => {
       ],
       raw: true
     })
-    .then((restaurant) => res.render('detail', { restaurant, editDelete }))
+    .then((restaurant) => res.render('detail', { restaurant, editDelete, message: req.flash('success') }))
 })
 
 app.get('/restaurant/:id/edit', async (req, res) => {
@@ -181,13 +195,20 @@ app.put('/restaurant/:id', (req, res) => {
         where: { id }
       }
     )
-    .then(() => res.redirect(`/restaurant/${id}`))
+    .then(() => {
+      req.flash('success', '編輯成功!')
+      return res.redirect(`/restaurant/${id}`)
+    })
 })
 
 app.delete('/restaurant/:id', (req, res) => {
   const id = req.params.id
 
-  return rest.destroy({ where: { id } }).then(() => res.redirect('/restaurants'))
+  return rest.destroy({ where: { id } })
+  .then(() => {
+    req.flash('success', '刪除成功!')
+    return res.redirect('/restaurants')
+  })
 })
 
 app.listen(port, () => {
