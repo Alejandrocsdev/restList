@@ -74,4 +74,6 @@
 
 07 add flash messages ([eec3c47](https://github.com/Alejandrocsdev/restList/commit/eec3c47cf27fa197d178c31fc07b1b24c536cf62))
 
-08 add error handling ([](https://github.com/Alejandrocsdev/restList/commit/))
+08 add error handling ([fe7d758](https://github.com/Alejandrocsdev/restList/commit/fe7d758735922cdb2f45f7a9ce61e5e6424d5889))
+
+09 use express router ([](https://github.com/Alejandrocsdev/restList/commit/))
