@@ -72,4 +72,6 @@
 
 06 add pagination style & limit ([cf105fc](https://github.com/Alejandrocsdev/restList/commit/cf105fc881900f8d3f468941fcb53fbba2936405))
 
-07 add flash messages ([](https://github.com/Alejandrocsdev/restList/commit/))
+07 add flash messages ([eec3c47](https://github.com/Alejandrocsdev/restList/commit/eec3c47cf27fa197d178c31fc07b1b24c536cf62))
+
+08 add error handling ([](https://github.com/Alejandrocsdev/restList/commit/))

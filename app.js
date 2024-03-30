@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 
 app.get('/restaurant/new', (req, res) => {
   category.findAll({ attributes: ['id', 'name'], raw: true }).then((categories) => {
-    res.render('create', { categories })
+    res.render('create', { categories, error: req.flash('error') })
   })
 })
 
@@ -100,21 +100,41 @@ app.get('/restaurants', (req, res) => {
 })
 
 app.post('/restaurants', (req, res) => {
-  const name = req.body.name
-  const name_en = req.body.name_en
-  const image = req.body.image
-  const location = req.body.location
-  const phone = req.body.phone
-  const google_map = req.body.google_map
-  const rating = req.body.rating
-  const description = req.body.description
-  const categoryId = req.body.categoryId
-  return rest
-    .create({ name, name_en, image, location, phone, google_map, rating, description, categoryId })
-    .then(() => {
-      req.flash('success', '新增成功!')
-      return res.redirect('/restaurants')
-    })
+  try {
+    const name = req.body.name
+    const name_en = req.body.name_en
+    const image = req.body.image
+    const location = req.body.location
+    const phone = req.body.phone
+    const google_map = req.body.google_map
+    const rating = req.body.rating
+    const description = req.body.description
+    const categoryId = req.body.categoryId
+    return rest
+      .create({
+        name,
+        name_en,
+        image,
+        location,
+        phone,
+        google_map,
+        rating,
+        description,
+        categoryId
+      })
+      .then(() => {
+        req.flash('success', '新增成功!')
+        return res.redirect('/restaurants')
+      })
+      .catch((error) => {
+        console.error(error)
+        req.flash('error', '新增失敗:(')
+        return res.redirect('back')
+      })
+  } catch (error) {
+    console.error(error)
+    return res.redirect('back')
+  }
 })
 
 app.get('/restaurant/:id', (req, res) => {
@@ -142,7 +162,9 @@ app.get('/restaurant/:id', (req, res) => {
       ],
       raw: true
     })
-    .then((restaurant) => res.render('detail', { restaurant, editDelete, message: req.flash('success') }))
+    .then((restaurant) =>
+      res.render('detail', { restaurant, editDelete, message: req.flash('success') })
+    )
 })
 
 app.get('/restaurant/:id/edit', async (req, res) => {
@@ -171,44 +193,64 @@ app.get('/restaurant/:id/edit', async (req, res) => {
       ],
       raw: true
     })
-    .then((restaurant) => res.render('edit', { restaurant, categories }))
+    .then((restaurant) => res.render('edit', { restaurant, categories, error: req.flash('error') }))
 })
 
 app.put('/restaurant/:id', (req, res) => {
-  const body = req.body
-  const id = req.params.id
-
-  return rest
-    .update(
-      {
-        name: body.name,
-        name_en: body.name_en,
-        category: body.category,
-        image: body.image,
-        location: body.location,
-        phone: body.phone,
-        google_map: body.google_map,
-        rating: body.rating,
-        description: body.description
-      },
-      {
-        where: { id }
-      }
-    )
-    .then(() => {
-      req.flash('success', '編輯成功!')
-      return res.redirect(`/restaurant/${id}`)
-    })
+  try {
+    const body = req.body
+    const id = req.params.id
+    return rest
+      .update(
+        {
+          name: body.name,
+          name_en: body.name_en,
+          category: body.category,
+          image: body.image,
+          location: body.location,
+          phone: body.phone,
+          google_map: body.google_map,
+          rating: body.rating,
+          description: body.description
+        },
+        {
+          where: { id }
+        }
+      )
+      .then(() => {
+        req.flash('success', '編輯成功!')
+        return res.redirect(`/restaurant/${id}`)
+      })
+      .catch((error) => {
+        console.error(error)
+        req.flash('error', '編輯失敗:(')
+        return res.redirect('back')
+      })
+  } catch (error) {
+    console.error(error)
+    return res.redirect('back')
+  }
 })
 
 app.delete('/restaurant/:id', (req, res) => {
-  const id = req.params.id
+  try {
+    const id = req.params.id
 
-  return rest.destroy({ where: { id } })
-  .then(() => {
-    req.flash('success', '刪除成功!')
-    return res.redirect('/restaurants')
-  })
+    return rest
+      .destroy({ where: { id } })
+      .then(() => {
+        req.flash('success', '刪除成功!')
+        return res.redirect('/restaurants')
+      })
+      .catch((error) => {
+        console.error(error)
+        req.flash('error', '刪除失敗:(')
+        return res.redirect('back')
+      })
+  } catch (error) {
+    console.error(error)
+    return res.redirect('back')
+  }
 })
 
 app.listen(port, () => {

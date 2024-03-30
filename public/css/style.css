@@ -133,6 +133,15 @@ main {
   border-radius: 8px;
 }
 
+.error {
+  width: max-content;
+  margin: 0 auto 20px auto;
+  padding: 5px;
+  background-color: #d62828;
+  border: 2px solid #353535;
+  border-radius: 8px;
+}
+
 .search-bar {
   height: 50px;
   margin-bottom: 20px;
