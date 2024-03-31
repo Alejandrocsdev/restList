@@ -12,9 +12,17 @@
 - 瀏覽餐廳的詳細資訊
 - 連結餐廳的地址到 Google 地圖
 - 搜尋特定餐廳
-- 新增餐廳資訊 (NEW)
-- 編輯餐廳資訊 (NEW)
-- 刪除餐廳資訊 (NEW)
+- 新增餐廳資訊
+- 編輯餐廳資訊
+- 刪除餐廳資訊
+- 文章排序功能 (new)
+- 文章分類schema (new)
+- 成功與失敗訊息 (new)
+- 分頁功能 (new)
+
+欲更改顯示頁數請修改./routes/restaurants.js的第20行:
+
+const limit = 3
 
 ## 開始使用
 
@@ -26,21 +34,59 @@
    npm install
    ```
 
-4. 安裝完畢後，請依序輸入：
+4. 在root資料夾創立包含以下資訊的.env檔：
 
    ```bash
-   npm run migrate
-   npm run seed
+   SESSION_SECRET=XXXXXXXXXXXX
+   ```
+
+5. 安裝完畢即完成環境參數設置後後，請依序輸入：
+
+   (包含db建立/migrations/seeders)
+
+   如Mysql已存在名為rest的db,請在./config/config.json更改
+
+   ```bash
+   npm run db:init
    npm run start
    ```
 
-5. 若看見此行訊息則代表順利運行，打開瀏覽器進入到以下網址
+6. 若看見此行訊息則代表順利運行，打開瀏覽器進入到以下網址
 
    ```bash
-   Listening on http://localhost:3000
+   http://localhost:3000/restaurants
    ```
 
-6. 若欲暫停使用
+7. 如不成功,可以擇一以下方式確認環境變數NODE_ENV=development：
+
+   Power Shell
+
+   ```bash
+   $env:NODE_ENV = "development"
+   echo $env:NODE_ENV
+   ```
+
+   CMD
+
+   ```bash
+   set NODE_ENV=development
+   echo %NODE_ENV%
+   ```
+
+   Git Bash
+
+   ```bash
+   export NODE_ENV=development
+   echo $NODE_ENV
+   ```
+
+   Manual Settings:
+
+   Win + R > sysdm.cpl > Advanced > Environment Variable > 
+   
+   User variables for user > New
+
+8. 若欲暫停使用
 
    ```bash
    ctrl + c
@@ -56,3 +102,6 @@
 - Sequelize: 6.37.1
 - Sequelize-Cli: 6.6.2
 - Font-Awesome 6.5.1
+- Connect-Flash 0.1.1
+- Express-Session 1.18.0
+- Dotenv 16.4.5

@@ -58,6 +58,8 @@
 
 ## [C4M2] (2024-03-27)
 
+### Features
+
 01 add sort options ([2977521](https://github.com/Alejandrocsdev/restList/commit/29775211527b841c78805e3dda836f41c01915e8))
 
 02 add categories table ([cf1d8b4](https://github.com/Alejandrocsdev/restList/commit/cf1d8b4d2499b4b63b75b9c4cbfa73cab3f05da8))
@@ -82,4 +84,8 @@
 
 11 use dotenv ([8affb2c](https://github.com/Alejandrocsdev/restList/commit/8affb2c37c8dbfd8b582affdc10e1faed5583394))
 
-12 add eb deployment configurations ([](https://github.com/Alejandrocsdev/restList/commit/))
+12 add eb deployment configurations ([199ab61](https://github.com/Alejandrocsdev/restList/commit/199ab617eadda8fe39fae1dbbb8d97ab237f9490))
+
+### Document
+
+13 update README.md ([](https://github.com/Alejandrocsdev/restList/commit/))

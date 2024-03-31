@@ -14,8 +14,9 @@ const errorHandler = require('./middlewares/error-handler')
 const app = express()
 // server
 const port = 3000
-
-if (process.env.NODE_ENV === 'development') {
+// environment
+const env = process.env.NODE_ENV || 'development'
+if (env === 'development') {
   require('dotenv').config()
 }
 // template engine
