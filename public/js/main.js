@@ -12,7 +12,9 @@ const editInput = document.querySelectorAll('.edit-input')
 init()
 
 function init() {
-  select.addEventListener('change', sort)
+  if (select) {
+    select.addEventListener('change', sort)
+  }
   createPage()
   editPage()
 }

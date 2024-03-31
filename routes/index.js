@@ -3,7 +3,7 @@ const router = express.Router()
 
 const restaurants = require('./restaurants')
 
-router.use(restaurants)
+router.use('/restaurants', restaurants)
 
 router.get('/', (req, res) => {
   res.send('This is Root page')

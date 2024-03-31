@@ -78,4 +78,6 @@
 
 09 use express router ([750ab3d](https://github.com/Alejandrocsdev/restList/commit/750ab3d614373ae751c3a0ba8e2f97fff93c13f3))
 
-10 handle flash message by using message/error middleware ([](https://github.com/Alejandrocsdev/restList/commit/))
+10 handle flash message by using message/error middleware ([564387b](https://github.com/Alejandrocsdev/restList/commit/564387b0e6207f14f8e3c84ca7a50b047c9f8f8b))
+
+11 use dotenv ([](https://github.com/Alejandrocsdev/restList/commit/))

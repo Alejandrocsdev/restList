@@ -8,13 +8,13 @@ const router = express.Router()
 const rest = db.rest
 const category = db.category
 
-router.get('/restaurant/new', (req, res) => {
+router.get('/new', (req, res) => {
   category.findAll({ attributes: ['id', 'name'], raw: true }).then((categories) => {
     res.render('create', { categories })
   })
 })
 
-router.get('/restaurants', (req, res) => {
+router.get('/', (req, res) => {
   rest.count().then((total) => {
     const page = Number(req.query.page) || 1
     const limit = 3
@@ -66,7 +66,7 @@ router.get('/restaurants', (req, res) => {
   })
 })
 
-router.post('/restaurants', (req, res, next) => {
+router.post('/', (req, res, next) => {
   const name = req.body.name
   const name_en = req.body.name_en
   const image = req.body.image
@@ -98,7 +98,7 @@ router.post('/restaurants', (req, res, next) => {
     })
 })
 
-router.get('/restaurant/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   const editDelete = true
   const id = req.params.id
   return rest
@@ -126,7 +126,7 @@ router.get('/restaurant/:id', (req, res) => {
     .then((restaurant) => res.render('detail', { restaurant, editDelete }))
 })
 
-router.get('/restaurant/:id/edit', async (req, res) => {
+router.get('/:id/edit', async (req, res) => {
   const id = req.params.id
   const categories = await category.findAll({ attributes: ['id', 'name'], raw: true })
   const restaurant = await rest
@@ -155,7 +155,7 @@ router.get('/restaurant/:id/edit', async (req, res) => {
     .then((restaurant) => res.render('edit', { restaurant, categories }))
 })
 
-router.put('/restaurant/:id', (req, res, next) => {
+router.put('/:id', (req, res, next) => {
   const body = req.body
   const id = req.params.id
   return rest
@@ -177,7 +177,7 @@ router.put('/restaurant/:id', (req, res, next) => {
     )
     .then(() => {
       req.flash('success', '編輯成功!')
-      return res.redirect(`/restaurant/${id}`)
+      return res.redirect(`/restaurants/${id}`)
     })
     .catch((error) => {
       error.errorMessage = '編輯失敗:('
@@ -185,7 +185,7 @@ router.put('/restaurant/:id', (req, res, next) => {
     })
 })
 
-router.delete('/restaurant/:id', (req, res, next) => {
+router.delete('/:id', (req, res, next) => {
   const id = req.params.id
 
   return rest

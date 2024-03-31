@@ -6,14 +6,14 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "migrate": "npx sequelize db:migrate",
-    "seed": "npx sequelize db:seed:all"
+    "db:init": "npx sequelize db:create && npx sequelize db:migrate --to 20240307144713-create-rest.js && npx sequelize db:seed --seed 20240307145016-rests.js && npx sequelize db:migrate --to 20240328045335-create-category.js && npx sequelize db:seed --seed 20240328045636-categories.js && npx sequelize db:migrate --to 20240328052128-add-categoryId-to-rests.js && npx sequelize db:migrate"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "connect-flash": "^0.1.1",
+    "dotenv": "^16.4.5",
     "express": "^4.18.3",
     "express-handlebars": "^7.1.2",
     "express-session": "^1.18.0",
