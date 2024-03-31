@@ -80,4 +80,6 @@
 
 10 handle flash message by using message/error middleware ([564387b](https://github.com/Alejandrocsdev/restList/commit/564387b0e6207f14f8e3c84ca7a50b047c9f8f8b))
 
-11 use dotenv ([](https://github.com/Alejandrocsdev/restList/commit/))
+11 use dotenv ([8affb2c](https://github.com/Alejandrocsdev/restList/commit/8affb2c37c8dbfd8b582affdc10e1faed5583394))
+
+12 add eb deployment configurations ([](https://github.com/Alejandrocsdev/restList/commit/))
